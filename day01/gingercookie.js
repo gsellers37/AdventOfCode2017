@@ -3,6 +3,7 @@ var input = "8239366453455812726956773185134594918346411298443937426725535444391
 console.log("Input is " + input)
 var sum;
 
+// Part 1
 console.log("Part1")
 sum = 0;
 for (var i = 0; i < input.length; i++) {
@@ -10,10 +11,19 @@ for (var i = 0; i < input.length; i++) {
         sum += Number(input[i]);
     }
 }
-
-if (input[input.length-1] == input[0])
+if (input[input.length-1] == input[0]) {
     sum += Number(input[0])
+}
 console.log("The answer to day1 part1 is : " + sum + "\n\n");
 
+
+// Part 2
 console.log("Part2\n\n")
 sum = 0;
+
+for (i = 0; i < input.length; i++) {
+    if (input[i] == input[(i+input.length/2)%input.length]) {
+        sum += Number(input[i])
+    }
+}
+console.log("The answer to day1 part2 is : " + sum + "\n\n");
