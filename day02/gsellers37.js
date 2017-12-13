@@ -52,7 +52,7 @@ function partTwo(txt){
       num1 = Number(nums[num1i]);
 
       for(var num2i in nums){
-        
+
         if (num1i == num2i) continue;
 
         num2 = Number(nums[num2i]);
@@ -64,4 +64,5 @@ function partTwo(txt){
       }
     }
   }
+  console.log("Sum is: " + sum);
 }
