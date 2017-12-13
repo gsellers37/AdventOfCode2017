@@ -46,11 +46,24 @@ reader.onload = function(e) {
         nums = rows[i].split("\t");
 
         for (var j in nums) {
-            for (var k in nums) {
-                if (Number(nums[j]%Number(nums[k])) == 0) {
-                    console.log("Found divisible numbers: ")
-                    sum += Math.abs(Number(nums[j])-Number(nums[k]));
+            n1 = Number(nums[j]);
+
+            for (var k = Number(j)+1; k < nums.length; k++) {
+                n2 = Number(nums[k]);
+
+                if (n1==n2) {
+                    continue;
+                }
+                if (n1 % n2 == 0) {
+                    console.log("In row " + i + ", found " + n2 + " divides " +
+                        n1);
+                    sum += (n1/n2);
                     break;
+                }
+                if (n2 % n1 == 0) {
+                    console.log("In row " + i + ", found " + n1 + " divides " +
+                        n2);
+                    sum += (n2/n1);
                 }
             }
         }
